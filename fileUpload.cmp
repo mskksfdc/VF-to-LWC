@@ -1,0 +1,14 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId,forceCommunity:availableForAllPageTypes" access="global">
+    <aura:attribute name="setMeOnInit" type="String" default="default value" />
+    <aura:attribute name="recordReceived" type="String" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}"/>
+        <aura:attribute name="vfHost" type="String" default="chetansri-dev-ed--c.ap5.visual.force.com"/>
+
+    
+    <iframe aura:id="vfFrame" src="{!'https://' + v.vfHost + '/apex/FormApply'}" style="border:none;"/>
+
+    <p>This value is set in the controller before component get record details from visualforce page.</p>
+    <p><b>{!v.setMeOnInit}</b></p> 
+    <p>{!v.recordReceived} this is from vf wrapper</p>
+    
+</aura:component>
